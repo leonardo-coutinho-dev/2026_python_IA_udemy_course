@@ -1,4 +1,4 @@
-# 1. Lista de tarefas, o usuário tem as seguintes opções:
+# ✅1. Lista de tarefas, o usuário tem as seguintes opções:
 
 ##### I. Visualizar a lista de tarefas;
 ##### II. Adicionar uma tarefa;
@@ -46,15 +46,21 @@
 ##### VI. Limpar a lista;
 ##### VII. Encerrar o programa.
 
-# 7 - Criar um jogo em python! O usuário tem que acertar um número de 0 a 9, e tem 10 vidas.
+# ✅7 - Criar um jogo em python! O usuário tem que acertar um número de 0 a 9, e tem 10 vidas.
 
 ##### Regras:
-##### 1. Quando errar, perde uma vida.
-##### 2. Quando acertar, ganha uma vida.
-##### 3. As vidas podem acumular para + de 10 vidas, porém iniciam em 10.
-##### 4. O objetivo é ficar no jogo o máximo que conseguir (manter vidas acima de 0).
-##### 5. Quando atingir 0 vidas, o jogo termina.
+##### I. Quando errar, perde uma vida.
+##### II. Quando acertar, ganha uma vida.
+##### III. As vidas podem acumular para + de 10 vidas, porém iniciam em 10.
+##### IV. O objetivo é ficar no jogo o máximo que conseguir (manter vidas acima de 0).
+##### V. Quando atingir 0 vidas, o jogo termina.
 
-##### 6. Colocar o computador para jogar contra si.
+##### VI. Colocar o computador para jogar contra si.
+
+# ✅8. Criar um programa de criação de clientes de um banco (conta poupança e corrente).
+
+# 9. Criar um programa de cadastro de produtos em uma rede de supermercado.
+
+# 10. Criar um programa de cadastro de veículos de uma empresa de aluguel de carros.
 
 # Quando terminados, acrescentar uma interface de usuário (UI) com Django para todos os projetos anteriores.
