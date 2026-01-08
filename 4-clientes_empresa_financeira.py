@@ -1,5 +1,3 @@
-## First lvl
-
 class Client:
     def __init__(self, id_number, name, age, year_salary, date_of_birth, creation_date):
         self.id_number = id_number
@@ -17,8 +15,6 @@ class Client:
         print(f'Year salary: $ {self.year_salary:.2f}')
         print(f'Date of birth: {self.date_of_birth}')
         print(f'Creation date: {self.creation_date}\n')
-
-## Second lvl
 
 class Account:
     def __init__(self, client: Client, balance: float):
@@ -72,8 +68,6 @@ class SavingsAccount(Account):
         print(f'{self.client.name}')
         print(f'{self.type} account\n')
         print(f'[ID: {self.client.id_number}] {self.type} account balance: $ {self.balance:.2f}\n')
-
-## Third lvl
 
 # SpecialAccount Operations (Discount & Membership Logic)
 
