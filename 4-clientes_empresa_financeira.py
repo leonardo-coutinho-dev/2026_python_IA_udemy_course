@@ -28,15 +28,40 @@ class Account:
         # password
         # creation_date
 
+    def deposit(self, amount: float):
+        if amount <= 0:
+            raise ValueError("Deposit amount cannot be negative or zero.")
+        self.balance += amount
+
+    def withdraw(self, amount: float):
+        if amount <= 0:
+            raise ValueError("Withdraw amount cannot be negative or zero.")
+        if amount > self.balance:
+            raise ValueError("Withdraw amount cannot be greater than balance.")
+        self.balance -= amount
+
+    def transfer(self, amount: float, destination_account):
+        if amount <= 0:
+            raise ValueError("Transfer amount cannot be negative or zero.")
+        self.withdraw(amount)
+        destination_account.deposit(amount)
+
+    def get_balance(self) -> float:
+        return self.balance
+
+# Checking accounts are optimized for high-frequency transactions.
+
 class CheckingAccount(Account):
     def __init__(self, client: Client, balance: float):
         super().__init__(client, balance)
         self.type = 'checking'
 
     def show_account(self):
-        self.client.info_client()
-        print(f'Account type: {self.type}\n')
+        print(f'{self.client.name}')
+        print(f'{self.type} account\n')
         print(f'[ID: {self.client.id_number}] {self.type} account balance: $ {self.balance:.2f}\n')
+
+# Savings accounts are about money growth and controlled access.
 
 class SavingsAccount(Account):
     def __init__(self, client: Client, balance: float):
@@ -44,11 +69,13 @@ class SavingsAccount(Account):
         self.type = 'savings'
 
     def show_account(self):
-        self.client.info_client()
-        print(f'Account type: {self.type}\n')
+        print(f'{self.client.name}')
+        print(f'{self.type} account\n')
         print(f'[ID: {self.client.id_number}] {self.type} account balance: $ {self.balance:.2f}\n')
 
 ## Third lvl
+
+# SpecialAccount Operations (Discount & Membership Logic)
 
 class SpecialAccount(CheckingAccount):
     def __init__(self, client: Client, balance: float, discount: int, membership: str):
@@ -60,6 +87,8 @@ class SpecialAccount(CheckingAccount):
         self.show_account()
         print(f'[ID: {self.client.id_number}] has {self.membership} membership.')
         print(f'[ID: {self.client.id_number}] has {self.discount}% discount on all products.')
+
+########## Testing area --------------------------------------------------------------------------------------------------------------------------------
 
 ##### Creating Client Class(es)
 
@@ -94,9 +123,29 @@ checking_account_2.show_account()
 print('------> client_2 savings: \n')
 savings_account_2.show_account()
 
+print('------> client_1 checking / after deposit: \n')
+checking_account_1.deposit(1000)
+checking_account_1.show_account()
+
+print('------> client_1 savings / after deposit: \n')
+savings_account_1.deposit(1000)
+savings_account_1.show_account()
+
 ##### Creating client_1 ClientGold Class
 
 client_platinum_1 = SpecialAccount(client_1, checking_account_1.balance, 25, 'platinum')
 
-print('------> client_1 client PLATINUM account: \n')
+print('------> client_1 PLATINUM account: \n')
 client_platinum_1.show_info()
+
+print('\n------> client_1 transfer account client_2: \n')
+
+checking_account_1.transfer(1200, checking_account_2)
+
+print('------> client_1 checking account: \n')
+
+checking_account_1.show_account()
+
+print('------> client_2 checking account: \n')
+
+checking_account_2.show_account()
