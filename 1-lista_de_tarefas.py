@@ -43,10 +43,10 @@ while estado_programa:
             if len(lista_tarefas) == 0:
                 print('\nLista de tarefas vazia. Nada para remover!')
             else:
-              lista_tarefas = []
+              lista_tarefas.clear()
               print('\nTodas as tarefas foram removidas.')
         case 5:
-            estado_programa = False
             print('\nPrograma encerrado.')
+            estado_programa = False
         case _:
             print('Opção inexistente!')

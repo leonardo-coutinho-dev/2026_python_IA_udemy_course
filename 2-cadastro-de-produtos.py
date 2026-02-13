@@ -4,6 +4,8 @@ estado_programa = True
 
 lista_de_produtos = []
 
+total_de_produtos = 0
+
 id_produto = 1
 
 @dataclass
@@ -19,29 +21,25 @@ while estado_programa:
 
     print('\nLista de produtos\n')
 
-    print('1. Visualizar a lista.')
-    print('2. Adicionar um produto.')
-    print('3. Remover um produto.')
-    print('4. Limpar a lista.')
-    print('5. Encerrar o programa.')
+    print('1. Criar produto.') # Create
+    print('2. Ler um produto.') # Read
+    print('3. Atualizar um produto.') # Update
+    print('4. Deletar um produto.') # Delete
+    print('5. Visualizar a lista de produtos.') # Read all
+    print('6. Limpar a lista de produtos.')  # Delete all
+    print('7. Visualizar o total de produtos em estoque.')
+    print('8. Encerrar o programa.')
 
-    opcao = input('\nDigite um número(1-5): ')
+    opcao = input('\nDigite um número (1-8): ')
     opcao = int(opcao)
 
-    while opcao < 1 or opcao > 5:
-        opcao = input('\nPor favor, digite um número de 1 a 5: ')
+    while opcao < 1 or opcao > 8:
+        opcao = input('\nPor favor, digite um número de 1 a 8: ')
         opcao = int(opcao)
 
     match opcao:
         case 1:
-            if len(lista_de_produtos) == 0:
-                print('\nA lista de produtos está vazia!')
-            else:
-                print('\nAqui está a lista de produtos: \n')
-                for produto in lista_de_produtos:
-                    print(f'{lista_de_produtos.index(produto) + 1}. {produto}')
-        case 2:
-            produto_nome = input('Digite o nome do produto: ')
+            produto_nome = input('\nDigite o nome do produto: ')
             produto_descricao = input('Digite a descrição do produto: ')
             produto_preco = float(input('Digite o valor do produto: '))
             produto_quantidade = int(input('Qual a quantidade do produto em estoque? '))
@@ -50,12 +48,49 @@ while estado_programa:
 
             lista_de_produtos.append(new_product)
 
-            print('Produto adicionado com sucesso!')
+            print('\nProduto adicionado com sucesso!')
 
             id_produto += 1
+        case 2:
+            if len(lista_de_produtos) == 0:
+                print('\nA lista de produtos está vazia!')
+            else:
+                produto_id = int(input('\nDigite o id do produto a ser visualizado: \n'))
+                for produto in lista_de_produtos:
+                    if produto_id == produto.id:
+                        print(produto)
         case 3:
-            print('You have chosen 3')
+            print('\nAtualizar um produto.') # IMPLEMENTAR
         case 4:
-            print('You have chosen 4')
+            if len(lista_de_produtos) == 0:
+                print('\nA lista de produtos está vazia!')
+            else:
+                produto_id = int(input('\nDigite o id do produto a ser removido: '))
+                for produto in lista_de_produtos:
+                    if produto_id == produto.id:
+                        lista_de_produtos.remove(produto)
+                        print('\nProduto removido com sucesso!')
         case 5:
+            if len(lista_de_produtos) == 0:
+                print('\nA lista de produtos está vazia!')
+            else:
+                print('\nAqui está a lista de produtos: \n')
+                for produto in lista_de_produtos:
+                    print(f'{lista_de_produtos.index(produto) + 1}. {produto}')
+        case 6:
+            print('\nLista esvaziada com sucesso!')
+            lista_de_produtos.clear()
+        case 7:
+            print('\nTotal de produtos em estoque:')
+
+            if len(lista_de_produtos) == 0:
+                print('\nA lista de produtos está vazia!')
+            else:
+                for produto in lista_de_produtos:
+                    total_de_produtos += produto.quantity
+                print(f'\n{total_de_produtos} unidade(s).')
+        case 8:
+            print('Programa finalizado.')
             estado_programa = False
+        case _:
+            print('Opção inexistente!')
