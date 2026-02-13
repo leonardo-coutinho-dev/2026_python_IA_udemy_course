@@ -6,7 +6,7 @@
 ##### IV. Limpar a lista;
 ##### V. Encerrar o programa.
 
-# 2. Construir um programa de cadastro de produtos, o usuário tem as seguintes opções:
+# 2. Construir um programa de cadastro de produtos, o usuário tem as seguintes opções ('produto', classe aninhada 'categoria'):
 
 ##### I. Visualizar a lista de produtos;
 ##### II. Visualizar um produto específico;
@@ -16,7 +16,7 @@
 ##### VI. Limpar a lista;
 ##### VII. Encerrar o programa.
 
-# 3. Escrever um programa de controle de estoque de frutas;
+# 3. Escrever um programa de controle de estoque de frutas / verduras (criar uma classe 'produto', e duas classes aninhadas - 'fruta' e 'verdura');
 
 ##### I. Visualizar a lista de frutas;
 ##### II. Visualizar uma fruta específica;
@@ -25,6 +25,8 @@
 ##### V. Alterar uma fruta do estoque;
 ##### VI. Limpar a lista;
 ##### VII. Encerrar o programa.
+
+# ✅4. Criar um programa de criação de clientes de um banco (conta poupança e corrente).
 
 # 5. Criar um programa de cadastro de casas de uma imobiliária: pedir as informações via input e criar uma nova entidade casa.
 
@@ -36,7 +38,7 @@
 ##### VI. Limpar a lista;
 ##### VII. Encerrar o programa.
 
-# 6. Criar um programa de cadastro de funcionários de uma empresa: pedir as informações via input e criar uma nova entidade funcionário.
+# 6. Criar um programa de cadastro de funcionários de uma empresa: pedir as informações via input e criar uma nova entidade funcionário (classe aninhada endereço).
 
 ##### I. Visualizar a lista de funcionários;
 ##### II. Visualizar um funcionário específico;
@@ -57,10 +59,14 @@
 
 ##### VI. Colocar o computador para jogar contra si.
 
-# ✅8. Criar um programa de criação de clientes de um banco (conta poupança e corrente).
+# 8. Criar um programa de cadastro de produtos em uma rede de supermercado.
 
-# 9. Criar um programa de cadastro de produtos em uma rede de supermercado.
+# 9. Criar um programa de cadastro de veículos de uma empresa de aluguel de carros.
 
-# 10. Criar um programa de cadastro de veículos de uma empresa de aluguel de carros.
+# 10. Criar um programa de cadastro de livros numa biblioteca.
+
+# 11. Criar um programa de cadastro computadores em um controle de stock. Criar uma classe 'computador' com nested classes, com uma classe aninhada para cada componente do computador.
 
 # Quando terminados, acrescentar uma interface de usuário (UI) com Django para todos os projetos anteriores.
+
+# Repassar: Herança múltipla & multinível, Polimorfismo, Agregação, Composição, Classes Aninhadas.

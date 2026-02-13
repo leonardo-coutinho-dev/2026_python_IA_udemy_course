@@ -1,7 +1,18 @@
+from dataclasses import dataclass
+
 estado_programa = True
 
-produto = {}
 lista_de_produtos = []
+
+id_produto = 1
+
+@dataclass
+class Product:
+    id: int
+    title: str
+    description: str
+    price: float
+    quantity: int
 
 while estado_programa:
     print('\n ----------------------------->')
@@ -23,9 +34,25 @@ while estado_programa:
 
     match opcao:
         case 1:
-            print('You have chosen 1')
+            if len(lista_de_produtos) == 0:
+                print('\nA lista de produtos está vazia!')
+            else:
+                print('\nAqui está a lista de produtos: \n')
+                for produto in lista_de_produtos:
+                    print(f'{lista_de_produtos.index(produto) + 1}. {produto}')
         case 2:
-            print('You have chosen 2')
+            produto_nome = input('Digite o nome do produto: ')
+            produto_descricao = input('Digite a descrição do produto: ')
+            produto_preco = float(input('Digite o valor do produto: '))
+            produto_quantidade = int(input('Qual a quantidade do produto em estoque? '))
+
+            new_product = Product(id_produto, produto_nome, produto_descricao, produto_preco, produto_quantidade)
+
+            lista_de_produtos.append(new_product)
+
+            print('Produto adicionado com sucesso!')
+
+            id_produto += 1
         case 3:
             print('You have chosen 3')
         case 4:
