@@ -9,7 +9,7 @@ while estado_programa:
 
     print('1. Visualizar a lista.')
     print('2. Adicionar uma tarefa.')
-    print('3. Remover uma tarefa.')
+    print('3. Remover uma tarefa por ID.')
     print('4. Limpar a lista.')
     print('5. Encerrar o programa.')
 
@@ -21,6 +21,7 @@ while estado_programa:
         opcao = int(opcao)
 
     match opcao:
+        # MOSTRAR LISTA
         case 1:
             if len(lista_tarefas) == 0:
                 print('\nLista de tarefas vazia. Por favor, adicione uma tarefa!')
@@ -28,10 +29,12 @@ while estado_programa:
                 print('\nTarefas do dia: \n')
                 for tarefa in lista_tarefas:
                     print(f'{lista_tarefas.index(tarefa) + 1}. {tarefa}')
+        # ADICIONAR UMA TAREFA
         case 2:
             nova_tarefa = input('\nQual tarefa você deseja incluir? ')
             lista_tarefas.append(nova_tarefa)
             print('\nTarefa incluída.')
+        # REMOVER UMA TAREFA POR ID
         case 3:
             if len(lista_tarefas) == 0:
                 print('\nLista de tarefas vazia. Por favor, adicione uma tarefa!')
@@ -39,14 +42,17 @@ while estado_programa:
               remover_tarefa = input('\nQual tarefa você deseja remover? Digite o seu identificador: ')
               lista_tarefas.remove(lista_tarefas[int(remover_tarefa) - 1])
               print('\nTarefa removida.')
+        # LIMPAR A LISTA
         case 4:
             if len(lista_tarefas) == 0:
                 print('\nLista de tarefas vazia. Nada para remover!')
             else:
               lista_tarefas.clear()
               print('\nTodas as tarefas foram removidas.')
+        # ENCERRAR PROGRAMA
         case 5:
             print('\nPrograma encerrado.')
             estado_programa = False
+        # DEFAULT
         case _:
             print('Opção inexistente!')
