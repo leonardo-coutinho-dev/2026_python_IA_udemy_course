@@ -31,7 +31,6 @@ class Product:
         self._profit = profit
         self._quantity = quantity
 
-
     # CUSTOM METHODS
     @property
     def valor_total(self) -> float:
@@ -130,10 +129,10 @@ while estado_programa:
             if len(lista_de_produtos) == 0:
                 print('\nA lista de produtos está vazia!')
             else:
-                produto_id = int(input('\nDigite o id do produto a ser visualizado: \n'))
+                produto_id = int(input('\nDigite o id do produto a ser visualizado: '))
                 for produto in lista_de_produtos:
                     if produto_id == produto.id:
-                        print(produto)
+                        print(f'\n{produto}')
         # UPDATE
         case 3:
             if len(lista_de_produtos) == 0:
@@ -142,7 +141,7 @@ while estado_programa:
                 produto_id = int(input('\nDigite o id do produto a ser atualizado: '))
                 for produto in lista_de_produtos:
                     if produto_id == produto.id:
-                        print(produto)
+                        print(f'\n{produto}')
 
                         estado_programa_atualizar = True
 
@@ -156,31 +155,31 @@ while estado_programa:
                             print('6. Atualizar outro produto')
                             print('7. Finalizar\n')
 
-                            opcao = int(input('Qual informação será atualizada?\n'))
+                            opcao = int(input('Qual informação será atualizada? '))
                             # IMPLEMENTAR
                             match opcao:
                                 case 1:
                                     produto_nome = input('\nDigite o nome do produto: ')
                                     produto.name = produto_nome
-                                    print('Nome atualizado com sucesso!')
+                                    print('\nNome atualizado com sucesso!')
                                 case 2:
                                     produto_descricao = input('Digite a descrição do produto: ')
                                     produto.description = produto_descricao
-                                    print('Descrição atualizada com sucesso!')
+                                    print('\nDescrição atualizada com sucesso!')
                                 case 3:
                                     produto_preco = float(input('Digite o valor (R$) do produto: '))
                                     produto.price = produto_preco
-                                    print('Preço atualizado com sucesso!')
+                                    print('\nPreço atualizado com sucesso!')
                                 case 4:
                                     produto_lucro = float(input('Digite o lucro (R$) do produto: '))
                                     produto.profit = produto_lucro
-                                    print('Lucro atualizado com sucesso!')
+                                    print('\nLucro atualizado com sucesso!')
                                 case 5:
                                     produto_quantidade = int(input('Qual a quantidade do produto em estoque? '))
                                     produto.quantity = produto_quantidade
-                                    print('Quantidade atualizada com sucesso!')
+                                    print('\nQuantidade atualizada com sucesso!')
                                 case 6:
-                                    print('Atualizar outro produto!')
+                                    print('\nAtualizar outro produto!')
                                 case 7:
                                     estado_programa_atualizar = False
         # DELETE
@@ -220,17 +219,17 @@ while estado_programa:
         case 8:
             for produto in lista_de_produtos:
                 valor_total_pr += produto.valor_total
-            print(f'O valor total (em R$) dos produtos em estoque é: R$ {valor_total_pr}')
+            print(f'\nO valor total (em R$) dos produtos em estoque é: R$ {valor_total_pr}')
             valor_total_pr = 0
         case 9:
             for produto in lista_de_produtos:
                 lucro_total_pr += produto.profit * produto.quantity
-            print(f'O lucro total (em R$) dos produtos em estoque é: R$ {lucro_total_pr}')
+            print(f'\nO lucro total (em R$) dos produtos em estoque é: R$ {lucro_total_pr}')
             lucro_total_pr = 0
         case 10:
-            print('Programa finalizado.')
+            print('\nPrograma finalizado.')
             estado_programa = False
             estado_programa_atualizar = False
         # DEFAULT
         case _:
-            print('Opção inexistente!')
+            print('\nOpção inexistente!')
