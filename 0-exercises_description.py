@@ -6,7 +6,7 @@
 ##### IV. Limpar a lista;
 ##### V. Encerrar o programa.
 
-# 2. Construir um programa de cadastro de produtos, o usuário tem as seguintes opções ('produto', classe aninhada 'categoria'):
+# ✅2. Construir um programa de cadastro de produtos, o usuário tem as seguintes opções ('produto', classe aninhada 'categoria'):
 
 ##### I. Visualizar a lista de produtos;
 ##### II. Visualizar um produto específico;
@@ -70,3 +70,68 @@
 # Quando terminados, acrescentar uma interface de usuário (UI) com Django para todos os projetos anteriores.
 
 # Repassar: Herança múltipla & multinível, Polimorfismo, Agregação, Composição, Classes Aninhadas.
+
+# Variables types:
+
+# 1. str (string) -> name = "Leo"
+# 2. int (integer) -> int = 42
+# 3. float (floating-point) -> float = 42.5
+# 4. bool (boolean) -> program_status = True
+# 5. list (ordered, mutable collection) -> numbers = [0, 1, 2, 3, 4, 5, ...]
+# 6. tuple (ordered, immutable collection) -> days = (1, 2, 3, 4, 5, ...)
+# 7. range (sequence of numbers - often used in loops) -> range(5) => (0 to 4)
+# 8. dict (key / value mapping) -> {"id" : "1", "name" : "Bob", "age" : 35}
+# 9. bytes (immutable sequence of bytes) -> data = b"hello"
+# 10. date -> from datetime import date => today = date(year, moth, day) => timestamp = datetime.now().timestamp()
+
+# EXP. ... str, int, float, bool, list, tuple, range, dict, bytes / date, datetime from external lib
+
+ # Math operations
+
+# 1. +
+# 2. -
+# 3. *
+# 4. /
+# 5. **
+# 6. +=
+# 7. -=
+# 8. *=
+# 9. /=
+# 1....
+
+# Operands
+
+# 1. ==
+# 1. !=
+# 1. >
+# 1. <
+# 1. >=
+# 1. <=
+# 1. ! (NOT)
+# 1. ...
+
+# Conditionals
+
+# 1. if / else / elif
+# 1.
+
+# Looping
+
+# 1. for
+# 1. foreach
+# 1. while
+
+# selection
+
+# 1. match / case
+# 1. ...
+
+# Functions
+# Modularization ( export / import )
+# OOP
+# Classes
+# Inheritance
+# Polymorphism
+# Nested classes
+# Composition & Aggregation
+# super()
